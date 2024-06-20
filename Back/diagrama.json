@@ -1,0 +1,22 @@
++--------------------+     +-------------------------------+     +-----------------------+
+|      Client        |     |     Project                   |     |       Task            |
++--------------------+     +-------------------------------+     +-----------------------+
+| - id: int          |     | - project_id: int             |     | - id: int             |
+| - name: String     |     | - project_name: String        |     | - name: String        |
+| - email: String    |     | - project_description: String |     | - description: String |
+| - password: String |     | - dt_init: Date               |     | - status: String      |
+| - company: String  |     | - dt_end: Date                |     | - dt_init: Date       |
+| - phone: String    |     | - status: String              |     | - dt_end: Date        |
+| - address: String  |     | - client_id: Int              |     | - prioridade: String  |
++--------------------+     +-------------------------------+     | - project_id: Int|    |
+| + autenticar()     |<- N:N ->| + adicionarMembro() ------|     +-----------------------+
+| + cadastrar()      |     | + removerclient  -------------|     | + atualizarStatus()   |
++--------------------+     | + adicionarTarefa()           |     | + atribuir()          |
+                           | + removerTarefa()             |     +-----------------------+
+                           +-------------------------------+     
+
+
+Relacionamentos:
+- Cliente - Projeto: Um cliente pode ter vários projetos. Relacionamento 1:N.
+- Projeto - Atividade: Um projeto pode ter várias atividades. Relacionamento 1:N.
+- Atividade - Cliente: Uma atividade é associada a um cliente através de um projeto. Relacionamento 1:N.
